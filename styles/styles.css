@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #2f2f2f;
+  color: #ddd;
+}
+
+#map {
+  height: 90vh;
+  transition: transform 0.5s ease-in-out;
+}
+
+#map.shifted {
+  transform: translateX(-30vw);
+}
+
+#search-container {
+  position: relative;
+  padding: 10px;
+  background: #3a3a3a;
+}
+
+#search-input {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+  background: #4a4a4a;
+  color: #ddd;
+  border: 1px solid #666;
+}
+
+#suggestions {
+  position: absolute;
+  background: #3a3a3a;
+  border: 1px solid #555;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 300px;
+  z-index: 1000;
+  color: #ddd;
+}
+
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background: #555;
+}
+
+#loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #3a3a3a;
+  padding: 10px;
+  border: 1px solid #555;
+  color: #ddd;
+}
+
+.leaflet-overlay-pane {
+  z-index: 600 !important;
+}
+
+.leaflet-overlay-pane svg path {
+  pointer-events: auto;
+}
+
+#info-panel {
+  position: fixed;
+  top: 0;
+  right: -60vw;
+  width: 0;
+  height: 110vh;
+  background: #2f2f2f;
+  border-left: 1px solid #444;
+  padding: 0 20px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.7);
+  z-index: 1100;
+  overflow-y: auto;
+  transition: right 0.5s ease-in-out, width 0.5s ease-in-out;
+  color: #fff;
+}
+
+#info-panel.open {
+  right: 0;
+  width: 55vw;
+  padding: 20px 30px;
+}
+
+#info-panel h3,
+#info-panel p,
+#info-panel .percentage,
+#info-panel .icon {
+  color: #fff;
+  fill: #fff;
+}
+
+#close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.location-dot {
+  cursor: pointer !important;
+  pointer-events: all;
+}
+
+#chart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: -20px
+}
+
+#chart-wrapper {
+  width: 100%;
+  max-width: 700px;
+  height: 600px;
+  position: relative;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.chart.active {
+  display: block;
+}
+
+.nav-button {
+  background: #555;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.nav-button:hover {
+  background: #777;
+}
+
+.nav-button:disabled {
+  background: #333;
+  cursor: not-allowed;
+}
+
+#gender-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gender-chart svg {
+  overflow: visible;
+}
+
+#gender-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gender-icons img {
+  width: 60px;
+  height: 60px;
+}
+
+.percentage {
+  fill: #ddd;
+  font-weight: bold;
+  text-anchor: middle;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.icon {
+  font-size: 24px;
+  text-anchor: middle;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#tooltip {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  z-index: 1200;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}

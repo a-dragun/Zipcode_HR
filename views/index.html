@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <title>Vizualizacija naselja RH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="/styles/styles.css" />
+</head>
+<body>
+<div id="search-container">
+  <input type="text" id="search-input" placeholder="Unesite naselje ili poštanski broj...">
+  <div id="suggestions"></div>
+</div>
+<div id="map"></div>
+<div id="loading">Učitavanje...</div>
+<div id="info-panel">
+  <button id="close-button">X</button>
+  <p id="info-content"></p>
+  <div id="chart-container">
+    <button id="prev-chart" class="nav-button">←</button>
+    <div id="chart-wrapper">
+      <div id="gender-chart" class="chart"></div>
+      <div id="bar-chart" class="chart"></div>
+      <div id="pyramid-chart" class="chart"></div>
+    </div>
+    <button id="next-chart" class="nav-button">→</button>
+  </div>
+</div>
+<div id="tooltip" style="display: none;"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+<script src="/scripts/donutchart.js"></script>
+<script src="/scripts/barchart.js"></script>
+<script src="/scripts/populationpyramid.js"></script>
+<script src="/scripts/infopanel.js"></script>
+<script src="/scripts/suggestions.js"></script>
+<script src="/scripts/features.js"></script>
+<script src="/scripts/chart.js"></script>
+<script src="/scripts/script.js"></script>
+</body>
+</html>
