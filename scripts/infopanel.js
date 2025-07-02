@@ -4,6 +4,13 @@ function openInfoPanel(feature) {
     document.getElementById('map').classList.add('shifted');
     const content = d3.select("#info-content");
     content.selectAll("*").remove();
+    content.append("div")
+    .text("UPOZORENJE: Iscrtana površina na karti je približna. Podaci se odnose na naselje koje je označeno crvenom oznakom na karti.")
+        .style("text-align", "center")
+        .style("font-size", "10px")
+        .style("margin-bottom", "4px")
+        .style("color", "red");
+
 
     content.append("div")
         .text(`${feature.properties.name.toUpperCase()} [${feature.properties.postcode}]`)

@@ -40,6 +40,15 @@
       .domain([0, d3.max(data, d => d.value)]).nice()
       .range([height - margin.bottom, margin.top]);
 
+  svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top / 2 -10)
+    .attr("text-anchor", "middle")
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+    .style("fill", "#ffffff")
+    .text("Distribucija stanovništva po starosti");
+
     svg.append("g")
       .attr("transform", `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(x));

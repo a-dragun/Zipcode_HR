@@ -43,6 +43,15 @@ function createPopulationPyramid(feature) {
         .range([margin.left, width - margin.right])
         .nice();
 
+      svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", margin.top / 2 -10)
+    .attr("text-anchor", "middle")
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+    .style("fill", "#ffffff")
+    .text("Dobno-spolna struktura stanovništva");
+
     const colorMale = "#009fe3";
     const colorFemale = "#e5007e";
 

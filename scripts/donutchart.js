@@ -24,6 +24,14 @@ function createDonutChart(feature) {
         .style("margin", "auto")
         .style("display", "block");
         
+      svg.append("text")
+    .attr("x", width / 2)
+    .attr("y", -40)
+    .attr("text-anchor", "middle")
+    .style("font-size", "18px")
+    .style("font-weight", "bold")
+    .style("fill", "#ffffff")
+    .text("Udio muškaraca i žena u ukupnom stanovništvu");
 
     const group = svg.append("g")
         .attr("transform", `translate(${width / 2}, ${height / 2})`);

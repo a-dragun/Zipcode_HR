@@ -5,8 +5,8 @@ const map = L.map('map', {
     doubleClickZoom: true,
     boxZoom: true,
     touchZoom: true,
-    minZoom: 7.3
-}).setView([44.5, 16.5], 7.3);
+    minZoom: 7
+}).setView([44.5, 16.5], 7);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap',
@@ -25,9 +25,10 @@ let currentChartIndex = 0;
 const chartFunctions = [
     createDonutChart,
     createBarChart,
-    createPopulationPyramid
+    createPopulationPyramid,
+    createSpiderChart
 ];
-const chartIds = ['gender-chart', 'bar-chart', 'pyramid-chart'];
+const chartIds = ['gender-chart', 'bar-chart', 'pyramid-chart', 'spider-chart'];
 
 function formatNumberWithDots(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -68,7 +69,7 @@ function toggleLeafletZoom(enable) {
 }
 
 showLoading();
-fetch('/data/output_cleaned_updated2.geojson')
+fetch('/data/output_f.json')
     .then(res => res.json())
     .then(data => {
         allFeatures = data.features.filter(f => f.geometry && f.properties.name);

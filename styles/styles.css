@@ -1,23 +1,31 @@
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+}
+
+body {
   font-family: Arial;
   background: #2f2f2f;
   color: #ddd;
+  display: flex;
+  flex-direction: column;
 }
 
-#map {
-  height: 90vh;
-  transition: transform 0.5s ease-in-out;
-}
-
-#map.shifted {
-  transform: translateX(-30vw);
+.main-title {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
+  color: #fff;
+  flex-shrink: 0;
 }
 
 #search-container {
   position: relative;
   padding: 10px;
   background: #3a3a3a;
+  flex-shrink: 0;
 }
 
 #search-input {
@@ -49,6 +57,16 @@ body {
   background: #555;
 }
 
+#map {
+  flex: 1 1 auto;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+#map.shifted {
+  transform: translateX(-30vw);
+}
+
 #loading {
   display: none;
   position: absolute;
@@ -74,7 +92,7 @@ body {
   top: 0;
   right: -60vw;
   width: 0;
-  height: 110vh;
+  height: 105vh;
   background: #2f2f2f;
   border-left: 1px solid #444;
   padding: 0 20px;
@@ -121,7 +139,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-top: -20px
+  margin-top: -20px;
 }
 
 #chart-wrapper {
@@ -213,4 +231,11 @@ body {
   pointer-events: none;
   z-index: 1200;
   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+
+.axis-label {
+  font-size: 14px;
+  fill: #ffffff;
+  font-weight: bold;
+  text-shadow: 0 0 3px rgba(0,0,0,0.5);
 }
